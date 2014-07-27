@@ -1,7 +1,8 @@
 
-public class Funcionario {
-	String nome;
-	int Salario ;
+abstract  class Funcionario {
+	protected String nome;
+	protected int Salario ;
+	protected Ponto marcador;
 	
 
 }
