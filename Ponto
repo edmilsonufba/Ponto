@@ -8,7 +8,7 @@ public class Ponto {
 		super();
 		HorasMes();
 	}
-
+	
 	private int horariochegada ;
 	private int horariosaida ;
 	protected int horastrabalhadas;
@@ -16,7 +16,7 @@ public class Ponto {
 	private Scanner ler;
 	
  
- //------------------Get e Set ----------------//
+ //------------------Get e Set Inicio----------------//
  	public int getHorariosaida() {
  		return horariosaida;
  	}
@@ -41,15 +41,10 @@ public class Ponto {
  	public void setNumeroDias(int numeroDias) {
  		this.numeroDias = numeroDias;
  	}
-//------------------Get e Set ----------------//
- 	
- 	
+//------------------Get e Set Fim ----------------//
  
- 
-
-
-
-private int calculodehoras(){
+//------------------Metodos de funcionamento Inicio ----------------//
+ 	private int calculodehoras(){
 	int horas =0 ;
 	int x = this.horastrabalhadas ;
 	System.out.printf ("Digite O horario de chegada");
@@ -58,12 +53,15 @@ private int calculodehoras(){
 	System.out.printf ("Digite O horario de saida");
 	ler = new Scanner(System.in);
 	this.horariosaida = ler.nextInt();
-	horas = this.horariosaida - this.horariochegada  ;
-	this.horastrabalhadas = x + horas ;
-	return this.horastrabalhadas;
-}
-
-public void HorasMes(){
+		if(this.horariosaida > this.horariochegada) {
+			horas = this.horariosaida - this.horariochegada  ;
+			this.horastrabalhadas = x + horas ;
+			return this.horastrabalhadas;
+		}
+		return this.horastrabalhadas;
+	}
+ 
+ 	public void HorasMes(){
 	System.out.printf ("Digite O numero de dias trabalhados");
 	ler = new Scanner(System.in);
 	this.numeroDias = ler.nextInt();
@@ -71,11 +69,10 @@ public void HorasMes(){
 	while (dias != this.numeroDias  ){
 		calculodehoras();
 		dias++ ;
-		System.out.print (this.horastrabalhadas);
+		//System.out.print (this.horastrabalhadas+ "efhuodfhsihfsf  ");
+		}
 	}
-	
-}
-
+//------------------Metodos de funcionamento Fim----------------//
 }
 
 
